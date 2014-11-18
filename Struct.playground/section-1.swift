@@ -34,3 +34,29 @@ struct Contact3 {
 }
 
 var person3 = Contact3(fName: "Jon", lName: "Smith")
+
+// Struct Methods
+
+struct Contact4 {
+	var firstName: String
+	var lastName: String
+	var type: String
+
+	init(fName: String, lName: String) {
+		self.firstName = fName
+		self.lastName = lName
+		self.type = "Friend"
+	}
+
+	func fullName() -> String {
+		return self.firstName + " " + self.lastName
+		// or
+		// return "\(self.firstName) \(self.lastName)"
+	}
+}
+
+var person4 = Contact4(fName: "Jon", lName: "Smith")
+person4.fullName()
+person4.firstName = "Tom"
+person4.lastName = "Young"
+person4.fullName()
