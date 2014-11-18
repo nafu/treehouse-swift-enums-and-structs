@@ -47,3 +47,25 @@ func weekdayOrWeekendWithEnum(dayOfWeek: Day) -> String {
 }
 
 weekdayOrWeekendWithEnum(Day.Sunday)
+
+var today = Day.Monday
+today = .Sunday
+
+enum DayWithRawValue: Int {
+	case Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, Saturday = 6, Sunday = 7
+	// same as above
+	// case Monday = 1, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+}
+
+func daysTillWeekend(day: DayWithRawValue) -> Int {
+	return DayWithRawValue.Saturday.rawValue - day.rawValue
+}
+
+daysTillWeekend(DayWithRawValue.Friday)
+
+DayWithRawValue(rawValue: 3)
+DayWithRawValue(rawValue: 10)
+
+if let firstDayOfWeek = DayWithRawValue(rawValue: 1) {
+	daysTillWeekend(firstDayOfWeek)
+}
